@@ -2,23 +2,25 @@
 
 ## Overview
 
-This project is an interactive portfolio website built using HTML, CSS, and JavaScript.
+This project is a complete personal portfolio web application built using HTML, CSS, and JavaScript.
 
-The goal is to present personal information and projects while improving user interaction through dynamic features.
+The goal is to present personal information and projects while providing an interactive and user-friendly experience. The application combines multiple features such as filtering, API integration, animations, and persistent data storage.
 
 ---
 
 ## Technologies Used
 
-- HTML for structure
-- CSS for styling and layout
-- JavaScript for interactivity
-- localStorage for saving user preferences
+* HTML for structure
+* CSS for styling and responsive layout
+* JavaScript for interactivity and logic
+* localStorage for saving user preferences
+* Pexels API for dynamic image content
 
 ---
 
 ## Project Structure
-assignment-3/
+
+assignment4/
 ├── index.html
 ├── css/
 │   └── styles.css
@@ -32,116 +34,82 @@ assignment-3/
 
 ---
 
-## Main Features Implementation
+## Core Features Implementation
 
-### 1. Welcome Overlay
+### 1. Welcome Overlay & Personalization
 
-- A popup appears when the page loads
-- The user enters their name
-- The greeting updates dynamically using JavaScript
-- An error message appears if the input is empty
+* A welcome popup asks for the user’s name
+* The name is saved using localStorage
+* On reload, the overlay is skipped if a name exists
+* The greeting updates dynamically based on time of day
 
-Key concepts:
-- DOM selection
-- Event listeners
-- Input validation
-
-### Overlay Improvement
-
-- The user name is stored in localStorage after it is entered
-- When the page reloads, the application checks if a name already exists
-- If a name is found, the overlay is skipped and the greeting is shown directly
-
-Example:
-
-```javascript
-const savedName = localStorage.getItem("username");
-```
+This improves user experience by personalizing the interface.
 
 ---
 
-### 2. Mode Switching
+### 2. Mode Switching System
 
-- A button switches between:
-  - All
-  - Professional
-  - Creative
+* Users can switch between:
 
-- Each project has a class:
-  - professional
-  - creative
+  * All
+  * Professional
+  * Creative
 
-- JavaScript shows or hides projects based on the selected mode
+* Each project is tagged with a class
 
-- The page theme changes using body classes:
-    body.classList.add(“mode-professional”)
+* JavaScript filters projects based on selected mode
+
+* The page theme updates using body classes
+
+This feature demonstrates conditional rendering and dynamic UI updates.
 
 ---
 
-### 3. Dynamic Filtering
+### 3. Favorites System
 
-- Projects are filtered based on user interaction
-- If no projects match, a message is displayed
+* Users can mark projects as favorites
+* Favorite state is stored in localStorage
+* Favorites persist after page reload
+* Users can filter to show only favorite projects
+
+This feature combines:
+
+* state management
+* filtering logic
+* user interaction
 
 ---
 
 ### 4. Scroll Animations
 
-- Elements appear when the user scrolls
-- Implemented using JavaScript and CSS classes
+* Sections and elements appear when scrolling
+* Implemented using JavaScript and CSS transitions
 
-Example: element.classList.add(“active”)
-
----
-
-### 5. Favorite Feature
-
-- Users can mark projects as favorites
-- The state is saved using localStorage
-- The selection remains after refreshing the page
-
-Example:
-
-```javascript
-localStorage.setItem("favorites", JSON.stringify(favoriteProjects));
-```
+This improves visual engagement and user experience.
 
 ---
 
-### 6. Show Favorites Only
+### 5. Contact Form Validation
 
-- Users can choose to display only their favorite projects
-- This is controlled using a button or toggle
-- When activated, only projects marked as favorites are shown
-- When deactivated, all projects are displayed again
+* Validates:
 
-This feature combines:
-- filtering logic
-- stored data from localStorage
-- conditional rendering
+  * name
+  * email format
+  * message length
 
-It demonstrates more advanced interaction by combining multiple conditions (selected mode + favorite state).
+* Displays error messages for invalid input
 
----
+* Displays success message when valid
 
-### 7. Form Validation
-
-- The contact form validates:
-  - name
-  - email
-  - message
-
-- Error messages appear for invalid input
-- A success message appears when submission is valid
+This ensures proper user input handling.
 
 ---
 
-### 8. API Integration (Pexels)
+### 6. API Integration (Pexels)
 
-- The application connects to the Pexels API using a fetch request.
-- Users enter a keyword, which is used as a query parameter.
-- The API returns image data in JSON format.
-- The images are dynamically created and added to the page.
+* Users enter a keyword
+* A fetch request is sent to the Pexels API
+* Images are dynamically displayed on the page
 
 Example:
 
@@ -149,22 +117,42 @@ Example:
 fetch(`https://api.pexels.com/v1/search?query=${query}`)
 ```
 
+* Handles:
+
+  * empty input
+  * failed requests
+  * no results found
+
+This feature demonstrates working with external APIs and asynchronous JavaScript.
+
+---
+
+### 7. Tooltip User Guidance
+
+* A tooltip appears when hovering over the mode button
+* It explains how to switch between views
+* Improves usability and user understanding
+
 ---
 
 ## Error Handling
 
-- Empty input fields show clear error messages
-- Invalid email format is detected
-- If no projects match a filter, a message is shown
-- If API fails → user-friendly error message appears
-- If no images found → message is displayed
+* Empty input fields show clear messages
+* Invalid email format is detected
+* No matching projects shows a message
+* API errors display user-friendly feedback
+
+---
+
+## Performance Considerations
+
+* Efficient DOM updates (only necessary elements updated)
+* LocalStorage used instead of repeated input
+* Images optimized and loaded dynamically
+* Minimal unnecessary re-renders
 
 ---
 
 ## Conclusion
 
-This project extends the previous portfolio by adding more advanced functionality such as API integration, improved filtering, and state management using localStorage.
-
-The addition of the “Find Inspiration” feature allows users to interact with external data, making the website more dynamic and engaging. Features like project filtering, favorites, and persistent user data improve the overall user experience.
-
-Overall, the project demonstrates how JavaScript can be used to combine user interaction, conditional logic, and external data to create a more interactive and functional web application.
+This project demonstrates how multiple web development concepts can be combined into a complete application. It integrates user interaction, conditional logic, external APIs, and persistent data storage to create a functional and polished portfolio website.

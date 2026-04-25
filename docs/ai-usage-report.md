@@ -2,74 +2,95 @@
 
 ## Tools Used
 
-- ChatGPT
+* ChatGPT
 
 ---
 
 ## How AI Was Used
 
-AI was used as a support tool during development, mainly for debugging, improving structure, and implementing new features.
+AI was used as a support tool throughout the development of this project. It helped improve both technical implementation and overall structure.
+
+---
 
 ### 1. Debugging
 
-AI helped identify and fix several issues, including:
-- mode switching not working due to incorrect uppercase/lowercase values
-- overlay not being centered properly because of body padding
-- page loading at the bottom instead of the top
+AI helped identify and fix issues such as:
+
+* Mode switching not working due to incorrect values
+* Overlay positioning problems caused by layout styling
+* Page loading position issues (scroll behavior)
+* API responses not displaying correctly
 
 ---
 
-### 2. Code Development
+### 2. Feature Development
 
-AI assisted in:
-- structuring JavaScript functions such as mode switching and filtering
-- organizing event listeners
+AI assisted in implementing and improving features, including:
+
+* Mode switching logic
+* Favorites system using localStorage
+* API integration with Pexels
+* Tooltip for user guidance
+
+The suggestions were adjusted and customized to fit the project requirements.
 
 ---
 
+### 3. Code Structure and Organization
 
-### 3. Documentation
+AI was used to:
 
-AI was used to help structure and write:
-- README file
-- AI usage report
-- technical documentation
+* Organize JavaScript logic into clear functions
+* Improve readability and structure
+
+---
+
+### 4. Documentation
+
+AI helped structure and refine:
+
+* README file
+* Technical documentation
+* AI usage report
+
+The content was reviewed and modified to match the project and personal understanding.
 
 ---
 
 ## Example Prompts Used
 
-- "How do I fetch images from the Pexels API using JavaScript and display them on a webpage?"
-- "Why is my event listener not triggering when I click the search button?"
-- "How do I store and retrieve a user’s name using localStorage so it persists after refresh?"
-- "Why are my images not showing after fetching data from the API?"
-- "Why does my fetch request return data but nothing appears on the page?"
+* "How do I fetch images from the Pexels API using JavaScript?"
+* "Why is my event listener not working?"
+* "How do I use localStorage to save user data?"
+* "How can I improve user experience with tooltips?"
+* "Why is my API data not showing on the page?"
 
 ---
 
 ## Learning Outcomes
 
-From using AI in this assignment, I learned:
+Through using AI, I learned:
 
-- how small issues like case sensitivity can break functionality
-- how to debug JavaScript step by step
-- how DOM manipulation works in interactive features
-- how to design user interfaces that respond to user interaction
-- how to integrate external APIs into a web application
-- how to store and retrieve data using localStorage
+* How to debug JavaScript more effectively
+* How to structure interactive web applications
+* How to integrate APIs into a project
+* How to manage user data using localStorage
+* How to improve UI/UX through small enhancements
 
 ---
 
 ## Reflection
 
-AI helped speed up problem-solving and provided guidance when I was stuck. However, I still needed to understand the logic, test the code, and adjust it to match my own design.
-
-This allowed me to use AI as a learning tool rather than relying on it completely.
+AI was used as a learning and support tool rather than a replacement for understanding. All code was tested, modified, and adapted to fit the project. This helped improve both problem-solving skills and understanding of the implementation.
 
 ---
 
 ## Risks and Limitations
 
-Using AI can sometimes produce incorrect or incomplete code. There is also a risk of over-reliance without understanding the logic.
+AI can sometimes provide incorrect or incomplete solutions. To avoid this:
 
-To address this, all AI-generated code was tested, modified, and adjusted to fit the project requirements. I ensured I understood how each part works before using it.
+* All code was tested before use
+* Adjustments were made when needed
+* The logic was fully understood before implementation
+
+This ensured that the final project reflects my own understanding and work.
