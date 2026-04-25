@@ -14,6 +14,7 @@ const overlay = document.getElementById("welcomeOverlay");
 const greetBtn = document.getElementById("greetBtn");
 const visitorNameInput = document.getElementById("visitorName");
 const overlayError = document.getElementById("overlayError");
+const modeTooltip = document.getElementById("modeTooltip");
 
 const hour = new Date().getHours();
 let baseGreeting = "";
@@ -59,7 +60,6 @@ const modeSwitchBtn = document.getElementById("modeSwitchBtn");
 const projectCards = document.querySelectorAll(".project-card");
 const modeDescription = document.getElementById("modeDescription");
 const emptyMessage = document.getElementById("emptyMessage");
-
 const favoritesFilterBtn = document.getElementById("favoritesFilterBtn");
 let showFavoritesOnly = false;
 
@@ -127,10 +127,23 @@ function applyMode(selectedMode) {
     zoomLaptopFrames();
 }
 
+function showModeTooltip() {
+    if (!modeTooltip) return;
+
+    modeTooltip.textContent = "Click to switch between Professional 💻 and Creative 🎨 views";
+    modeTooltip.classList.add("show");
+
+    setTimeout(() => {
+        modeTooltip.classList.remove("show");
+    }, 2000);
+}
+
 if (modeSwitchBtn && projectCards.length > 0 && modeDescription && emptyMessage) {
     modeSwitchBtn.addEventListener("click", function () {
         currentModeIndex = (currentModeIndex + 1) % modes.length;
-        applyMode(modes[currentModeIndex]);
+        const selectedMode = modes[currentModeIndex];
+
+        applyMode(selectedMode);
     });
 
     applyMode("all");
@@ -272,6 +285,9 @@ function zoomLaptopFrames() {
         }
     });
 }
+modeSwitchBtn.addEventListener("mouseenter", () => {
+    showModeTooltip();
+});
 
 window.addEventListener("scroll", function () {
     handleScrollReveal();
